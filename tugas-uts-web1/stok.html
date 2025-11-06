@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. Informasi Stok / Katalog Buku</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Katalog Buku & Informasi Stok</h1>
+        <a href="dashboard.html">Kembali ke Dashboard</a>
+    </header>
+    
+    <main>
+        <div class="katalog-container">
+            <h2>Ketersediaan Stok Buku</h2>
+            <button id="tambahStokButton" class="action-btn admin-btn" style="margin-bottom: 20px;">+ Tambah Stok Baru</button>
+
+            <div style="overflow-x:auto;">
+                <table id="katalogTable">
+                    <thead>
+                        <tr>
+                            <th>Kode Barang</th>
+                            <th>Nama Barang</th>
+                            <th>Jenis</th>
+                            <th>Edisi</th>
+                            <th>Stok</th>
+                            <th>Harga</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

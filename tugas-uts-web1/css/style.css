@@ -1,0 +1,610 @@
+/* ===================================== */
+/* A. GLOBAL & UTILITY STYLES */
+/* ===================================== */
+
+:root {
+    --primary-color: #007bff; /* Biru */
+    --secondary-color: #6c757d; /* Abu-abu */
+    --success-color: #28a745; /* Hijau */
+    --danger-color: #dc3545; /* Merah */
+    --info-color: #17a2b8; /* Biru Muda */
+    --warning-color: #ffc107; /* Kuning/Emas */
+    --bg-light: #f8f9fa;
+    --text-dark: #343a40;
+    --border-color: #dee2e6;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+main {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+/* ===================================== */
+/* B. HEADER & NAVIGATION (UMUM) */
+/* ===================================== */
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: white;
+}
+
+header a {
+    color: white;
+    text-decoration: underline;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+/* ===================================== */
+/* C. BUTTONS & FORMS */
+/* ===================================== */
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+button, .menu-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.1s;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+}
+
+button[type="submit"], #loginButton, #prosesPemesanan {
+    background-color: var(--success-color);
+    color: white;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover, .menu-button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Khusus Logout */
+.logout {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+/* ===================================== */
+/* D. 1. Login Page (index.html) */
+/* ===================================== */
+
+.login-container {
+    max-width: 380px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+}
+
+.login-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.login-links button {
+    width: 48%;
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 14px;
+    padding: 8px;
+}
+
+/* ===================================== */
+/* E. 2. Dashboard Menu (dashboard.html) - REVAMPED */
+/* ===================================== */
+
+.dashboard-header {
+    /* Gradien Biru yang lembut */
+    background: linear-gradient(135deg, var(--primary-color), #0056b3); 
+    color: white;
+    padding: 30px 50px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-header h1 {
+    font-size: 2.5em;
+    color: white;
+    margin: 0;
+    font-weight: 600;
+}
+
+.dashboard-header .greeting-text {
+    font-size: 1.1em;
+    color: #f1f1f1;
+    margin-top: 5px;
+}
+
+.dashboard-main {
+    max-width: 1200px; /* Lebar lebih besar untuk dashboard */
+    padding: 40px 20px;
+    margin-top: 0; /* Menghilangkan margin atas agar rapat dengan header */
+}
+
+.section-title {
+    font-size: 1.8em;
+    color: var(--text-dark);
+    border-left: 5px solid var(--primary-color);
+    padding-left: 15px;
+    margin-bottom: 30px;
+}
+
+.dashboard-menu {
+    display: grid;
+    /* Membuat kolom responsif dengan lebar minimal 250px */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px;
+}
+
+.menu-card {
+    display: block;
+    padding: 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-dark);
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Bayangan lembut */
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    border-top: 5px solid transparent; /* Placeholder for color accent */
+    min-height: 180px; /* Tinggi minimum kartu */
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    background-color: var(--bg-light);
+}
+
+.menu-card h3 {
+    font-size: 1.5em;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: var(--text-dark);
+}
+
+.menu-card p {
+    font-size: 0.9em;
+    color: var(--secondary-color);
+}
+
+.icon-wrapper {
+    font-size: 3em;
+    line-height: 1;
+    display: inline-block;
+}
+
+/* Color Accents (Garis atas kartu) */
+.menu-stock { border-top-color: var(--success-color); }
+.menu-checkout { border-top-color: var(--warning-color); }
+.menu-tracking { border-top-color: var(--info-color); }
+.menu-report { border-top-color: var(--primary-color); }
+.menu-history { border-top-color: #3b5998; }
+
+/* Disabled Card Style */
+.disabled-card {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+    filter: grayscale(50%);
+}
+.disabled-card:hover {
+    transform: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    background: white;
+}
+
+/* Header Logout Button */
+.logout-header-btn {
+    background-color: var(--danger-color);
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+/* ===================================== */
+/* F. TABLES (stok.html & checkout.html & tracking.html) */
+/* ===================================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden; /* Agar sudut bulat terlihat */
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+#katalogTable th:last-child {
+    width: 150px; /* Lebar kolom aksi */
+}
+
+/* Gaya untuk Buku (Cover & Nama) di Stok.html */
+.book-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.book-cover {
+    width: 50px; /* Ukuran gambar cover */
+    height: 70px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Gaya untuk Tombol Aksi di Stok */
+.action-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+    margin: 3px 0;
+    width: 100%; /* Memaksa tombol agar lebar penuh */
+    max-width: 140px; /* Batasi lebar tombol */
+}
+
+.beli-btn {
+    background-color: var(--warning-color); /* Kuning/emas */
+    color: var(--text-dark);
+}
+
+.beli-btn:disabled {
+    background-color: var(--secondary-color);
+    color: white;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.admin-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+
+/* Style khusus untuk baris baru di Stok (Stok.html) */
+#katalogTable .new-row td {
+    background-color: #fff3cd; 
+}
+#katalogTable .new-row input {
+    min-width: 80px; 
+}
+
+/* Footer tabel di Checkout */
+tfoot td {
+    font-weight: bold;
+    background-color: var(--bg-light);
+    border-top: 2px solid var(--text-dark);
+}
+/* Input Jumlah di Checkout */
+#cartItems input[type="number"] {
+    width: 60px;
+    text-align: center;
+    padding: 5px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* ===================================== */
+/* G. MODAL BOX (index.html) */
+/* ===================================== */
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--danger-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* ===================================== */
+/* H. TRACKING PAGE (tracking.html) */
+/* ===================================== */
+
+.tracking-input {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.tracking-input input {
+    flex-grow: 1;
+    min-width: 200px;
+}
+
+/* Detail Pengiriman */
+#detailPengiriman p {
+    margin: 5px 0;
+}
+#detailPengiriman strong {
+    min-width: 120px;
+    display: inline-block;
+}
+
+/* Status Progress Bar */
+.progress-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    position: relative;
+    padding: 0 10%; 
+}
+
+.progress-bar-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 4px;
+    background: #ccc;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.progress-step {
+    width: 100px;
+    height: 100px;
+    line-height: 14px;
+    text-align: center;
+    background-color: #ccc;
+    color: var(--text-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 2;
+    box-shadow: 0 2 분위5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.4s, color 0.4s;
+    position: relative;
+}
+
+/* Status Selesai */
+.progress-step.completed {
+    background-color: var(--success-color);
+    color: white;
+}
+/* Status Saat Ini */
+.progress-step.current {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 0 0 5px rgba(0, 123, 255, 0.5); 
+}
+
+/* Riwayat Perjalanan */
+.tracking-detail-table {
+    margin-top: 20px;
+}
+.tracking-detail-table th:first-child,
+.tracking-detail-table td:first-child {
+    width: 150px; 
+    white-space: nowrap;
+}
+
+
+/* ===================================== */
+/* I. Media Queries (Responsiveness) */
+/* ===================================== */
+
+@media (max-width: 768px) {
+    main {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    /* Dashboard Mobile View */
+    .dashboard-header {
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .dashboard-header h1 {
+        font-size: 2em;
+    }
+    .logout-header-btn {
+        margin-top: 15px;
+        width: 100%;
+    }
+    .dashboard-menu {
+        grid-template-columns: 1fr;
+    }
+    .section-title {
+        margin-top: 10px;
+    }
+
+    /* Stok Mobile View */
+    .book-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .book-cover {
+        margin-bottom: 5px;
+    }
+    #katalogTable td:last-child {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .action-btn {
+        max-width: none;
+    }
+
+
+    /* Tracking Mobile View */
+    .progress-bar-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+    }
+
+    .progress-bar-container::before {
+        left: 20px;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        height: 100%;
+        transform: translateY(0);
+    }
+
+    .progress-step {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        padding: 10px 15px;
+        margin: 10px 0;
+        justify-content: flex-start;
+        text-align: left;
+    }
+    .progress-step::after {
+        display: none;
+    }
+    .progress-step.completed::before, .progress-step.current::before {
+        content: '\2713'; 
+        display: inline-block;
+        margin-right: 10px;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        margin: 20px;
+        padding: 20px;
+    }
+    
+    .login-links {
+        flex-direction: column;
+    }
+    
+    .login-links button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

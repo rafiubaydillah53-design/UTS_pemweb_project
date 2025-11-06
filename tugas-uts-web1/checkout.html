@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4. Halaman Pemesanan (Checkout)</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Keranjang Belanja & Proses Checkout</h1>
+        <a href="dashboard.html">Kembali ke Dashboard</a>
+    </header>
+    
+    <main>
+        <div class="checkout-container">
+            <h2>1. Detail Item di Keranjang 🛒</h2>
+            <div style="overflow-x:auto; margin-bottom: 20px;">
+                <table id="cartTable">
+                    <thead>
+                        <tr>
+                            <th>Nama Buku</th>
+                            <th>Jumlah</th>
+                            <th>Harga Satuan</th>
+                            <th>Subtotal</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cartItems">
+                        </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" style="text-align: right; font-size: 1.2em;">TOTAL PEMBAYARAN:</td>
+                            <td colspan="2" id="totalPembayaran" style="font-size: 1.2em; font-weight: bold; color: var(--danger-color);">Rp 0</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <button id="tambahItemButton" style="background-color: var(--info-color); margin-bottom: 40px;">+ Tambah Buku Lain</button>
+
+            <div class="checkout-form-section">
+                <h2>2. Informasi Pemesan & Pengiriman 🚚</h2>
+                <form id="checkoutForm">
+                    <div class="form-group">
+                        <label for="namaPemesan">Nama Lengkap Pemesan:</label>
+                        <input type="text" id="namaPemesan" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="alamatKirim">Alamat Pengiriman Lengkap:</label>
+                        <textarea id="alamatKirim" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="metodePembayaran">Metode Pembayaran:</label>
+                        <select id="metodePembayaran" required>
+                            <option value="">-- Pilih Metode --</option>
+                            <option value="transfer_bca">Transfer Bank BCA</option>
+                            <option value="transfer_mandiri">Transfer Bank Mandiri</option>
+                            <option value="e_wallet">E-Wallet (Dana/GoPay)</option>
+                            <option value="cod">COD (Cash On Delivery)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" id="prosesPemesanan">Proses Pesanan Sekarang</button>
+                </form>
+            </div>
+            
+        </div>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

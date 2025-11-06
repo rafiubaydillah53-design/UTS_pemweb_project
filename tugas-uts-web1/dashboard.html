@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. Dashboard Menu | Toko Buku Online</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <header class="dashboard-header">
+        <div>
+            <h1 id="greetingMessage">Dashboard Aplikasi</h1> 
+            <p class="greeting-text">Akses cepat menu utama.</p>
+        </div>
+        <a href="index.html" class="menu-button logout logout-header-btn">🚪 Logout</a>
+    </header>
+    
+    <main class="dashboard-main">
+        <h2 class="section-title">Akses Cepat Menu</h2>
+        
+        <div class="dashboard-menu">
+            <a href="stok.html" class="menu-card menu-stock">
+                <div class="icon-wrapper">📖</div>
+                <h3>Stok & Katalog Buku</h3>
+                <p>Lihat, ubah, dan tambah stok buku.</p>
+            </a>
+            
+            <a href="checkout.html" class="menu-card menu-checkout">
+                <div class="icon-wrapper">🛒</div>
+                <h3>Halaman Pemesanan</h3>
+                <p>Mulai proses pemesanan buku.</p>
+            </a>
+            
+            <a href="tracking.html" class="menu-card menu-tracking">
+                <div class="icon-wrapper">🚚</div>
+                <h3>Tracking Pengiriman</h3>
+                <p>Lacak status Delivery Order Anda.</p>
+            </a>
+            
+            <a href="#" class="menu-card menu-report disabled-card">
+                <div class="icon-wrapper">📊</div>
+                <h3>Laporan Pemesanan</h3>
+                <p>Data rekap pemesanan (Segera hadir).</p>
+            </a>
+            
+            <a href="#" class="menu-card menu-history disabled-card">
+                <div class="icon-wrapper">⏳</div>
+                <h3>History Transaksi</h3>
+                <p>Riwayat semua transaksi (Segera hadir).</p>
+            </a>
+        </div>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

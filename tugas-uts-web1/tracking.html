@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5. Tracking Pengiriman</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Tracking Pengiriman</h1>
+    </header>
+    
+    <main>
+        <a href="dashboard.html"><button style="background-color: #6c757d;">&larr; Kembali ke Dashboard</button></a>
+
+        <div class="tracking-input" style="margin-top: 20px;">
+            <label for="doNumber">Input Nomor Delivery Order (Contoh: 20230012 atau 20230013):</label>
+            <input type="text" id="doNumber" placeholder="Masukkan Nomor DO" required style="width: 300px; display: inline-block;">
+            <button id="cariButton" style="background-color: #007bff;">Cari</button>
+        </div>
+
+        <div id="errorMessage" style="color: #dc3545; margin-top: 10px; font-weight: bold; display: none;">
+            Nomor Delivery Order tidak ditemukan.
+        </div>
+
+        <div id="trackingResult" style="display: none; margin-top: 30px;">
+            <h2>Hasil Tracking</h2>
+            
+            <div id="detailPengiriman" style="margin-bottom: 20px;">
+                <p><strong>Nama Pemesan:</strong> <span id="namaPemesanTrack"></span></p>
+                <p><strong>Total Pembayaran:</strong> <span id="totalBayarTrack"></span></p>
+                <p><strong>Detail Ekspdisi:</strong> <span id="ekspedisiTrack"></span></p>
+                <p><strong>Jenis Paket:</strong> <span id="jenisPaketTrack"></span></p>
+                <p><strong>Tanggal Kirim:</strong> <span id="tanggalKirimTrack"></span></p>
+            </div>
+
+            <h3>Status Pengiriman</h3>
+            <div id="statusProgressBar">
+                </div>
+        </div>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

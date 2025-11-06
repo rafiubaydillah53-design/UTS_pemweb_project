@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. Halaman Login Toko Buku Online</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login Aplikasi Pemesanan Buku</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Masukkan email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required placeholder="Masukkan password">
+            </div>
+            <button type="submit" id="loginButton">Login</button>
+        </form>
+        <div class="login-links">
+            <button id="lupaPasswordButton">Lupa Password</button>
+            <button id="daftarButton">Daftar</button>
+        </div>
+    </div>
+
+    <div id="lupaPasswordModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Lupa Password</h3>
+            <p>Silakan masukkan email Anda untuk mereset password.</p>
+            <input type="email" placeholder="Email Anda" required>
+            <button style="background-color: #ffc107; margin-top: 10px;">Kirim Link Reset</button>
+        </div>
+    </div>
+
+    <div id="daftarModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Daftar Akun Baru</h3>
+            <div class="form-group">
+                <input type="text" placeholder="Nama Lengkap" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password Baru" required>
+            </div>
+            <button style="background-color: #007bff;">Daftar Sekarang</button>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
